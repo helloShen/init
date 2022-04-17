@@ -21,22 +21,12 @@ module.exports = {
         type: 'asset/resource',
       },
       {
-        test: /\.(m|c)?js$/,
+        test: /\.m?js$/,
         resolve: {
           fullySpecified: false
         },
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: [
-              ['@babel/preset-env', { targets: 'defaults' }],
-            ],
-            plugins: [
-              ['@babel/plugin-transform-runtime'],
-            ],
-          },
-        },
+        use: ['babel-loader'],
       },
     ],
   },
